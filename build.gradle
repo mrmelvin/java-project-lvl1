@@ -17,6 +17,9 @@ compileJava {
     options.release = 17
 }
 
+run {
+    standardInput = System.in
+}
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'

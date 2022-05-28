@@ -19,5 +19,5 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
-      - name: Start app
-        run: make run-dist
+     # - name: Start app
+     #   run: make run-dist

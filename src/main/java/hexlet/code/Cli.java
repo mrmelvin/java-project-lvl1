@@ -6,12 +6,19 @@ public class Cli {
     public static void greetings() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        String empName = scan.nextLine();
-        System.out.print("Hello, " + empName);
+        String userName = scan.nextLine();
+        System.out.print("Hello, " + userName + "\n");
         scan.close();
     }
-//    public static void rand() {
-//        int randomNumber = (int) (Math.random() * 100);
-//        System.out.print("Random number is " + randomNumber);
+//    private String userName;
+//
+//    Cli(String userName) {
+//        this.userName = userName;
 //    }
+//
+//    public String getUserName() {
+//        return this.userName;
+//    }
+
+
 }

@@ -26,10 +26,13 @@ public class Games {
             } else if (number % 2 == 1 & answer.equals("yes")) {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'.");
                 break;
-            }
-            else {
+            } else if (number % 2 == 1 & answer.equals("no")) {
                 System.out.println("Correct!");
                 rightAnswers++;
+            }
+            else {
+                System.out.println("Please, type 'yes' or 'no'!");
+                break;
             }
             rounds++;
         }

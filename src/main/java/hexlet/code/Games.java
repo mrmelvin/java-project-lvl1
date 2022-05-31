@@ -9,14 +9,18 @@ public class Games {
         int rounds = 0;
         int totalRounds = 3;
         int rightAnswers = 0;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!\nMay I have your name?");
+        String userName = scan.nextLine();
+        System.out.print("Hello, " + userName + "\n");
         System.out.println("Answer 'yes' if number even otherwise answer 'no'.");
         while (rounds < totalRounds) {
             int number = generateRandomNumber();
             String s = String.format("Question: %d", number);
             System.out.println(s);
-            Scanner scan = new Scanner(System.in);
-            String answer = scan.nextLine();
-            System.out.println("Your answer:" + answer + "\n");
+            Scanner scanNumber = new Scanner(System.in);
+            String answer = scanNumber.nextLine();
+            System.out.printf("Your answer: %s \n", answer);
             if (number % 2 == 0 & answer.equals("yes")) {
                 System.out.println("Correct!");
                 rightAnswers++;
@@ -37,10 +41,11 @@ public class Games {
             rounds++;
         }
         if (rightAnswers == 3) {
-            System.out.println("Congratulations, Sam!");
+            System.out.printf("Congratulations, %s!\n", userName);
         }
         else {
-            System.out.println("Let's try again, Bill!");
+            System.out.printf("Let's try again, %s!\n", userName);
         }
+        scan.close();
     }
 }

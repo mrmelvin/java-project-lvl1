@@ -20,7 +20,6 @@ public class App {
                 greetings();
                 break;
             case "2":
-                greetings();
                 even();
                 break;
             default:

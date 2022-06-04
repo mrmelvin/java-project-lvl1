@@ -3,13 +3,16 @@ package hexlet.code;
 import java.util.Scanner;
 
 import static hexlet.code.Cli.*;
-import static hexlet.code.Games.*;
+import static hexlet.code.Engine.*;
+import static hexlet.code.games.Even.*;
+import static hexlet.code.games.Calculator.*;
 public class App {
     public static void selectGame() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Please enter the game number and press Enter.\n" +
                 "1 - Greet\n" +
                 "2 - Even\n" +
+                "3 - Calc\n" +
                 "0 - Exit");
         String selectedGame = scan.nextLine();
         switch (selectedGame) {
@@ -20,7 +23,10 @@ public class App {
                 greetings();
                 break;
             case "2":
-                even();
+                evenGame();
+                break;
+            case "3":
+                calculatorGame();
                 break;
             default:
                 System.out.println("Please, type number in range 0 from 6");

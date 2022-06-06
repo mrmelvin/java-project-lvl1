@@ -4,5 +4,7 @@
 ![example workflow](https://github.com/mrmelvin/java-project-lvl1/actions/workflows/build-app.yml/badge.svg)
 ### Example app work (Even Game):
 https://asciinema.org/a/Bo1APBlcHLxIOZlqtjz3dD60g
-### Example app work (Even Game and Calculation Games):
+### Example app work (Calculation Game):
 https://asciinema.org/a/IKegc08pYB3JaF3DKtKJdOi6Y
+### Example app work (GCD Game):
+https://asciinema.org/a/TCP348sB3CbEspx6VrFzSOkIq

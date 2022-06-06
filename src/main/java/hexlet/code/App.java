@@ -6,6 +6,7 @@ import static hexlet.code.Cli.*;
 import static hexlet.code.Engine.*;
 import static hexlet.code.games.Even.*;
 import static hexlet.code.games.Calculator.*;
+import static hexlet.code.games.GCD.*;
 public class App {
     public static void selectGame() {
         Scanner scan = new Scanner(System.in);
@@ -13,6 +14,7 @@ public class App {
                 "1 - Greet\n" +
                 "2 - Even\n" +
                 "3 - Calc\n" +
+                "4 - GCD\n" +
                 "0 - Exit");
         System.out.print("Your choice: ");
         String selectedGame = scan.nextLine();
@@ -28,6 +30,9 @@ public class App {
                 break;
             case "3":
                 calculatorGame();
+                break;
+            case "4":
+                GCDGame();
                 break;
             default:
                 System.out.println("Please, type number in range 0 from 6");

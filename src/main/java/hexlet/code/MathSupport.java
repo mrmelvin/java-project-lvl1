@@ -9,4 +9,8 @@ public class MathSupport {
         char[] operations = {'+', '-', '*'};
         return operations[generateRandomNumber(operations.length - 1)];
     }
+
+    public static int gcd(int firstPrime, int secondPrime) {
+        return secondPrime == 0 ? firstPrime : gcd(secondPrime, firstPrime%secondPrime);
+    }
 }

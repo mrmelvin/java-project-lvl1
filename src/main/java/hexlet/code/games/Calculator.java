@@ -1,17 +1,35 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Scanner;
 
 import static hexlet.code.MathSupport.*;
 
 public class Calculator {
+    private static int totalRounds = 3;
     public static void calculatorGame() {
-        char[] operations = {'+', '-', '*'};
-        int firstNumber = generateRandomNumber(100);
-        int secondNumber = generateRandomNumber(100);
-        char operation = generateRandomOperations();
-        int answer;
-        String s = String.format("What is the result of the expression?\nQuestion: %d %с %d", firstNumber, operation,secondNumber);
+        //char[] operators = {'+', '-', '*'};
+        int firstNumbers[] = new int[totalRounds];
+        int secondNumbers[] = new int[totalRounds];
+        String operations[] = new String[totalRounds];
+        String answers[] = new String[totalRounds];;
+        String calculationMessage = "What is the result of the expression?";
+        for (int i = 0; i < totalRounds; i++) {
+            firstNumbers[i] = generateRandomNumber(100);
+            secondNumbers[i] = generateRandomNumber(100);
+            char currentOperators = generateRandomOperators();
+            operations[i] = String.format("%d %c %d", firstNumbers[i], currentOperators, secondNumbers[i]);
+            if(currentOperators == '+') {
+                answers[i] = Integer.toString(firstNumbers[i] + secondNumbers[i]);
+            } else if (currentOperators == '-') {
+                answers[i] = Integer.toString(firstNumbers[i] - secondNumbers[i]);
+            } else {
+                answers[i] = Integer.toString(firstNumbers[i] * secondNumbers[i]);
+            }
+        }
+        Engine.startGame(calculationMessage, operations, answers);
+
 
 //        int rounds = 0;
 //        int totalRounds = 3;

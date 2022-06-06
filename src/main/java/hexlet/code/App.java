@@ -14,6 +14,7 @@ public class App {
                 "2 - Even\n" +
                 "3 - Calc\n" +
                 "0 - Exit");
+        System.out.print("Your choice: ");
         String selectedGame = scan.nextLine();
         switch (selectedGame) {
             case "0":

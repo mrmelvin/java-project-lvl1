@@ -5,8 +5,8 @@ public class MathSupport {
         return 1 + (int) (Math.random() * maximumNumber);
     }
 
-    public static char generateRandomOperations() {
+    public static char generateRandomOperators() {
         char[] operations = {'+', '-', '*'};
-        return operations[generateRandomNumber(operations.length)];
+        return operations[generateRandomNumber(operations.length - 1)];
     }
 }

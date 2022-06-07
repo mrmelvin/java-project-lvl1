@@ -13,4 +13,14 @@ public class MathSupport {
     public static int gcd(int firstPrime, int secondPrime) {
         return secondPrime == 0 ? firstPrime : gcd(secondPrime, firstPrime%secondPrime);
     }
+
+    public static int[] generateProgression(int step) {
+        int progressionLength = 10;
+        int[] progression = new int[progressionLength];
+        progression[0] = generateRandomNumber(50);
+        for (int i = 1; i < progressionLength; i++) {
+            progression[i] = progression[i - 1] + step;
+        }
+        return progression;
+    }
 }

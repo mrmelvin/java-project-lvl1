@@ -8,3 +8,5 @@ https://asciinema.org/a/Bo1APBlcHLxIOZlqtjz3dD60g
 https://asciinema.org/a/IKegc08pYB3JaF3DKtKJdOi6Y
 ### Example app work (GCD Game):
 https://asciinema.org/a/TCP348sB3CbEspx6VrFzSOkIq
+### Example app work (Progression Game):
+https://asciinema.org/a/kpJQPD5W1vZahcFoGscV2IFEt

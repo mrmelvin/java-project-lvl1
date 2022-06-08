@@ -10,3 +10,5 @@ https://asciinema.org/a/IKegc08pYB3JaF3DKtKJdOi6Y
 https://asciinema.org/a/TCP348sB3CbEspx6VrFzSOkIq
 ### Example app work (Progression Game):
 https://asciinema.org/a/kpJQPD5W1vZahcFoGscV2IFEt
+### Example app work (Prime Game):
+https://asciinema.org/a/o2EaZDQno95QDthgYdwHzsSqs

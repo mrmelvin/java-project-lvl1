@@ -1,6 +1,7 @@
 package hexlet.code;
 
 public class MathSupport {
+
     public static int generateRandomNumber(int maximumNumber) {
         return 1 + (int) (Math.random() * maximumNumber);
     }
@@ -11,7 +12,7 @@ public class MathSupport {
     }
 
     public static int gcd(int firstPrime, int secondPrime) {
-        return secondPrime == 0 ? firstPrime : gcd(secondPrime, firstPrime%secondPrime);
+        return secondPrime == 0 ? firstPrime : gcd(secondPrime, firstPrime % secondPrime);
     }
 
     public static int[] generateProgression(int step) {
@@ -22,5 +23,14 @@ public class MathSupport {
             progression[i] = progression[i - 1] + step;
         }
         return progression;
+    }
+
+    public static boolean isNumberPrime(int number) {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

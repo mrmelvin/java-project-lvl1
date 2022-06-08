@@ -2,10 +2,6 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import static hexlet.code.Cli.*;
-import static hexlet.code.games.Calculator.*;
-import static hexlet.code.games.Even.*;
-
 public class Engine {
 
     private static int totalRounds = 3;
@@ -17,7 +13,7 @@ public class Engine {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
         String userName = scan.nextLine();
-        System.out.println("Hello, " + userName + "\n");
+        System.out.println("Hello, " + userName);
 
         System.out.println(gameMessage);
         for (int step = 0; step < totalRounds; step++) {

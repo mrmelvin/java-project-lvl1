@@ -5,14 +5,14 @@ import static hexlet.code.MathSupport.generateRandomNumber;
 import static hexlet.code.MathSupport.isNumberPrime;
 
 public class Prime {
-    private static int totalRounds = 3;
-    private static int maxInteger = 100;
+    static final int TOTAL_ROUNDS = 3;
+    static final int MAX_INTEGER = 100;
     public static void primeGame() {
         String primeMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[] numbers = new String[totalRounds];
-        String[] primed = new String[totalRounds];
-        for (int i = 0; i < totalRounds; i++) {
-            int number = generateRandomNumber(maxInteger);
+        String[] numbers = new String[TOTAL_ROUNDS];
+        String[] primed = new String[TOTAL_ROUNDS];
+        for (int i = 0; i < TOTAL_ROUNDS; i++) {
+            int number = generateRandomNumber(MAX_INTEGER);
             numbers[i] = Integer.toString(number);
             primed[i] = isNumberPrime(number) ? "yes" : "no";
         }

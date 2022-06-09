@@ -5,15 +5,15 @@ import hexlet.code.Engine;
 import static hexlet.code.MathSupport.generateRandomNumber;
 
 public class Even {
-    private static int totalRounds = 3;
-    private static int maxInteger = 100;
+    static final int TOTAL_ROUNDS = 3;
+    static final int MAX_INTEGER = 100;
     public static void evenGame() {
         // Currently work solution
         String evenMessage = "Answer 'yes' if number even otherwise answer 'no'.";
-        String[] numbers = new String[totalRounds];
-        String[] parity = new String[totalRounds];
-        for (int i = 0; i < totalRounds; i++) {
-            int currentNumber = generateRandomNumber(maxInteger);
+        String[] numbers = new String[TOTAL_ROUNDS];
+        String[] parity = new String[TOTAL_ROUNDS];
+        for (int i = 0; i < TOTAL_ROUNDS; i++) {
+            int currentNumber = generateRandomNumber(MAX_INTEGER);
             numbers[i] = Integer.toString(currentNumber);
             parity[i] = (currentNumber % 2 == 0) ? "yes" : "no";
         }

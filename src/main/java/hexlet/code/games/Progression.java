@@ -5,14 +5,14 @@ import static hexlet.code.MathSupport.generateRandomNumber;
 import static hexlet.code.MathSupport.generateProgression;
 
 public class Progression {
-    private static int totalRounds = 3;
-    private static int maxInteger = 10;
+    static final int TOTAL_ROUNDS = 3;
+    static final int MAX_INTEGER = 10;
     public static void progressionGame() {
         String progressionMessage = "What number is missing in the progression?";
-        String[] questions = new String[totalRounds];
-        String[] answers = new String[totalRounds];
-        for (int i = 0; i < totalRounds; i++) {
-            int stepProgression = generateRandomNumber(maxInteger);
+        String[] questions = new String[TOTAL_ROUNDS];
+        String[] answers = new String[TOTAL_ROUNDS];
+        for (int i = 0; i < TOTAL_ROUNDS; i++) {
+            int stepProgression = generateRandomNumber(MAX_INTEGER);
             int[] clearProgression = generateProgression(stepProgression);
             int answerPosition = generateRandomNumber(clearProgression.length - 1);
             answers[i] = Integer.toString(clearProgression[answerPosition]);
@@ -20,8 +20,7 @@ public class Progression {
             for (int j = 0; j < clearProgression.length; j++) {
                 if (j == answerPosition) {
                     question += ".. ";
-                }
-                else {
+                } else {
                     question += Integer.toString(clearProgression[j]) + " ";
                 }
             }

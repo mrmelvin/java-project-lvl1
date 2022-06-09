@@ -2,6 +2,8 @@ package hexlet.code;
 
 public class MathSupport {
 
+    static final int PROGRESSION_LENGTH = 10;
+    static final int MAX_INTEGER_VALUE = 50;
     public static int generateRandomNumber(int maximumNumber) {
         return 1 + (int) (Math.random() * maximumNumber);
     }
@@ -16,10 +18,9 @@ public class MathSupport {
     }
 
     public static int[] generateProgression(int step) {
-        int progressionLength = 10;
-        int[] progression = new int[progressionLength];
-        progression[0] = generateRandomNumber(50);
-        for (int i = 1; i < progressionLength; i++) {
+        int[] progression = new int[PROGRESSION_LENGTH];
+        progression[0] = generateRandomNumber(MAX_INTEGER_VALUE);
+        for (int i = 1; i < PROGRESSION_LENGTH; i++) {
             progression[i] = progression[i - 1] + step;
         }
         return progression;

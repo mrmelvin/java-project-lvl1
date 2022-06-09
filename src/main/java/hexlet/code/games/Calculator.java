@@ -5,17 +5,17 @@ import static hexlet.code.MathSupport.generateRandomNumber;
 import static hexlet.code.MathSupport.generateRandomOperators;
 
 public class Calculator {
-    private static int totalRounds = 3;
-    private static int maxInteger = 100;
+    static final int TOTAL_ROUNDS = 3;
+    static final int MAX_INTEGER = 100;
     public static void calculatorGame() {
-        int[] firstNumbers = new int[totalRounds];
-        int[] secondNumbers = new int[totalRounds];
-        String[] operations = new String[totalRounds];
-        String[] answers = new String[totalRounds];
+        int[] firstNumbers = new int[TOTAL_ROUNDS];
+        int[] secondNumbers = new int[TOTAL_ROUNDS];
+        String[] operations = new String[TOTAL_ROUNDS];
+        String[] answers = new String[TOTAL_ROUNDS];
         String calculationMessage = "What is the result of the expression?";
-        for (int i = 0; i < totalRounds; i++) {
-            firstNumbers[i] = generateRandomNumber(maxInteger);
-            secondNumbers[i] = generateRandomNumber(maxInteger);
+        for (int i = 0; i < TOTAL_ROUNDS; i++) {
+            firstNumbers[i] = generateRandomNumber(MAX_INTEGER);
+            secondNumbers[i] = generateRandomNumber(MAX_INTEGER);
             char currentOperators = generateRandomOperators();
             operations[i] = String.format("%d %c %d", firstNumbers[i], currentOperators, secondNumbers[i]);
             if (currentOperators == '+') {

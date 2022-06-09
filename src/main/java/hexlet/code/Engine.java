@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static int totalRounds = 3;
+    static final int TOTAL_ROUNDS = 3;
     private static int currentWinRounds = 0;
-    private static int winRounds = 3;
+    static final int WIN_ROUNDS = 3;
 
 
     public static void startGame(String gameMessage, String[] questions, String[] answers) {
@@ -16,7 +16,7 @@ public class Engine {
         System.out.println("Hello, " + userName);
 
         System.out.println(gameMessage);
-        for (int step = 0; step < totalRounds; step++) {
+        for (int step = 0; step < TOTAL_ROUNDS; step++) {
             String s = String.format("Question: %s", questions[step]);
             System.out.println(s);
             Scanner sc = new Scanner(System.in);
@@ -31,7 +31,7 @@ public class Engine {
                 break;
             }
         }
-        if (currentWinRounds == winRounds) {
+        if (currentWinRounds == WIN_ROUNDS) {
             System.out.printf("Congratulations, %s!\n", userName);
         }
     }

@@ -1,4 +1,4 @@
-.DEFAULT_GOAL := build-run
+
 clean:
 	./gradlew clean
 
@@ -16,7 +16,5 @@ run:
 
 lint:
 	./gradlew checkstyleMain checkstyleTest
-
-build-run: build run
 
 .PHONY: build

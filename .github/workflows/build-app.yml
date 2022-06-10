@@ -7,6 +7,4 @@ jobs:
       - name: Clone repository code
         uses: actions/checkout@v2
       - name: Build
-        run: make install
-      - name: Run the app
-        run: make run-dist
+        run: make build

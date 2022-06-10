@@ -9,4 +9,4 @@ jobs:
       - name: Build
         run: make install
       - name: Run the app
-	run: make run-dist
+        run: make run-dist

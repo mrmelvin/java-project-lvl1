@@ -13,7 +13,7 @@ public class Engine {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
         String userName = scan.nextLine();
-        System.out.println("Hello, " + userName);
+        System.out.printf("Hello, %s!\n", userName);
 
         System.out.println(gameMessage);
         for (int step = 0; step < TOTAL_ROUNDS; step++) {

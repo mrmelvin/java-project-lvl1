@@ -23,7 +23,7 @@ public class App {
         String selectedGame = scan.nextLine();
         switch (selectedGame) {
             case "0":
-                System.out.println("Good bye");
+                System.out.println("Good bye! See you later!");
                 break;
             case "1":
                 greetings();

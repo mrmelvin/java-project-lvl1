@@ -11,7 +11,7 @@ public class Even {
         String evenMessage = "Answer 'yes' if number even otherwise answer 'no'.";
         int indexQuestion = 0;
         int indexAnswer = 1;
-        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer+1];
+        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer + 1];
         for (int round = 0; round < TOTAL_ROUNDS; round++) {
             int currentNumber = generateRandomNumber(MAX_INTEGER);
             roundData[round][indexQuestion] = Integer.toString(currentNumber);

@@ -10,7 +10,7 @@ public class GCD {
     public static void startGame() {
         int indexQuestion = 0;
         int indexAnswer = 1;
-        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer+1];
+        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer + 1];
         String calculationMessage = "Find the greatest common divisor of given numbers.";
         for (int round = 0; round < TOTAL_ROUNDS; round++) {
             int firstInt = generateRandomNumber(MAX_INTEGER);

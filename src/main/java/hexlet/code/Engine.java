@@ -7,7 +7,7 @@ public class Engine {
     static final int TOTAL_ROUNDS = 3;
     private static int currentWinRounds = 0;
 
-    public static void startGame(String gameMessage, String roundData[][]) {
+    public static void startGame(String gameMessage, String[][] roundData) {
         int indexQuestion = 0;
         int indexAnswer = 1;
         Scanner scanName = new Scanner(System.in);
@@ -25,7 +25,9 @@ public class Engine {
                 System.out.println("Correct!");
                 currentWinRounds++;
             } else {
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", gamerAnswer, roundData[round][indexAnswer]);
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n",
+                        gamerAnswer,
+                        roundData[round][indexAnswer]);
                 System.out.printf("Let's try again, %s!\n", userName);
                 break;
             }

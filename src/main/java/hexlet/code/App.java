@@ -2,7 +2,6 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-import hexlet.code.Cli;
 import hexlet.code.games.Even;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.GCD;

@@ -11,7 +11,7 @@ public class Progression {
         String progressionMessage = "What number is missing in the progression?";
         int indexQuestion = 0;
         int indexAnswer = 1;
-        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer+1];
+        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer + 1];
         for (int round = 0; round < TOTAL_ROUNDS; round++) {
             int stepProgression = generateRandomNumber(MAX_INTEGER);
             int[] clearProgression = generateProgression(stepProgression);

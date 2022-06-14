@@ -7,25 +7,26 @@ import static hexlet.code.MathSupport.generateRandomOperators;
 public class Calculator {
     static final int TOTAL_ROUNDS = 3;
     static final int MAX_INTEGER = 100;
-    public static void calculatorGame() {
+    public static void startGame() {
+        int indexQuestion = 0;
+        int indexAnswer = 1;
+        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer+1];
         int[] firstNumbers = new int[TOTAL_ROUNDS];
         int[] secondNumbers = new int[TOTAL_ROUNDS];
-        String[] operations = new String[TOTAL_ROUNDS];
-        String[] answers = new String[TOTAL_ROUNDS];
         String calculationMessage = "What is the result of the expression?";
-        for (int i = 0; i < TOTAL_ROUNDS; i++) {
-            firstNumbers[i] = generateRandomNumber(MAX_INTEGER);
-            secondNumbers[i] = generateRandomNumber(MAX_INTEGER);
+        for (int round = 0; round < TOTAL_ROUNDS; round++) {
+            firstNumbers[round] = generateRandomNumber(MAX_INTEGER);
+            secondNumbers[round] = generateRandomNumber(MAX_INTEGER);
             char currentOperators = generateRandomOperators();
-            operations[i] = String.format("%d %c %d", firstNumbers[i], currentOperators, secondNumbers[i]);
+            roundData[round][indexQuestion] = String.format("%d %c %d", firstNumbers[round], currentOperators, secondNumbers[round]);
             if (currentOperators == '+') {
-                answers[i] = Integer.toString(firstNumbers[i] + secondNumbers[i]);
+                roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] + secondNumbers[round]);
             } else if (currentOperators == '-') {
-                answers[i] = Integer.toString(firstNumbers[i] - secondNumbers[i]);
+                roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] - secondNumbers[round]);
             } else {
-                answers[i] = Integer.toString(firstNumbers[i] * secondNumbers[i]);
+                roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] * secondNumbers[round]);
             }
         }
-        Engine.startGame(calculationMessage, operations, answers);
+        Engine.startGame(calculationMessage, roundData);
     }
 }

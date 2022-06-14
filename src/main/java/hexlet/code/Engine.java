@@ -6,32 +6,32 @@ public class Engine {
 
     static final int TOTAL_ROUNDS = 3;
     private static int currentWinRounds = 0;
-    static final int WIN_ROUNDS = 3;
 
-
-    public static void startGame(String gameMessage, String[] questions, String[] answers) {
-        Scanner scan = new Scanner(System.in);
+    public static void startGame(String gameMessage, String roundData[][]) {
+        int indexQuestion = 0;
+        int indexAnswer = 1;
+        Scanner scanName = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        String userName = scan.nextLine();
+        String userName = scanName.nextLine();
         System.out.printf("Hello, %s!\n", userName);
-
         System.out.println(gameMessage);
-        for (int step = 0; step < TOTAL_ROUNDS; step++) {
-            String s = String.format("Question: %s", questions[step]);
+        Scanner sc = new Scanner(System.in);
+        for (int round = 0; round < TOTAL_ROUNDS; round++) {
+            String s = String.format("Question: %s", roundData[round][indexQuestion]);
             System.out.println(s);
-            Scanner sc = new Scanner(System.in);
             String gamerAnswer = sc.nextLine();
             System.out.printf("Your answer: %s\n", gamerAnswer);
-            if (gamerAnswer.equals(answers[step])) {
+            if (gamerAnswer.equals(roundData[round][1])) {
                 System.out.println("Correct!");
                 currentWinRounds++;
             } else {
-                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", gamerAnswer, answers[step]);
+                System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n", gamerAnswer, roundData[round][indexAnswer]);
                 System.out.printf("Let's try again, %s!\n", userName);
                 break;
             }
         }
-        if (currentWinRounds == WIN_ROUNDS) {
+        sc.close();
+        if (TOTAL_ROUNDS == currentWinRounds) {
             System.out.printf("Congratulations, %s!\n", userName);
         }
     }

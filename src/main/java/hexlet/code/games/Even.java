@@ -7,16 +7,16 @@ import static hexlet.code.MathSupport.generateRandomNumber;
 public class Even {
     static final int TOTAL_ROUNDS = 3;
     static final int MAX_INTEGER = 100;
-    public static void evenGame() {
-        // Currently work solution
+    public static void startGame() {
         String evenMessage = "Answer 'yes' if number even otherwise answer 'no'.";
-        String[] numbers = new String[TOTAL_ROUNDS];
-        String[] parity = new String[TOTAL_ROUNDS];
-        for (int i = 0; i < TOTAL_ROUNDS; i++) {
+        int indexQuestion = 0;
+        int indexAnswer = 1;
+        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer+1];
+        for (int round = 0; round < TOTAL_ROUNDS; round++) {
             int currentNumber = generateRandomNumber(MAX_INTEGER);
-            numbers[i] = Integer.toString(currentNumber);
-            parity[i] = (currentNumber % 2 == 0) ? "yes" : "no";
+            roundData[round][indexQuestion] = Integer.toString(currentNumber);
+            roundData[round][indexAnswer] = (currentNumber % 2 == 0) ? "yes" : "no";
         }
-        Engine.startGame(evenMessage, numbers, parity);
+        Engine.startGame(evenMessage, roundData);
     }
 }

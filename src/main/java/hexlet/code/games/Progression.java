@@ -7,15 +7,16 @@ import static hexlet.code.MathSupport.generateProgression;
 public class Progression {
     static final int TOTAL_ROUNDS = 3;
     static final int MAX_INTEGER = 10;
-    public static void progressionGame() {
+    public static void startGame() {
         String progressionMessage = "What number is missing in the progression?";
-        String[] questions = new String[TOTAL_ROUNDS];
-        String[] answers = new String[TOTAL_ROUNDS];
-        for (int i = 0; i < TOTAL_ROUNDS; i++) {
+        int indexQuestion = 0;
+        int indexAnswer = 1;
+        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer+1];
+        for (int round = 0; round < TOTAL_ROUNDS; round++) {
             int stepProgression = generateRandomNumber(MAX_INTEGER);
             int[] clearProgression = generateProgression(stepProgression);
             int answerPosition = generateRandomNumber(clearProgression.length - 1);
-            answers[i] = Integer.toString(clearProgression[answerPosition]);
+            roundData[round][indexAnswer] = Integer.toString(clearProgression[answerPosition]);
             String question = "";
             for (int j = 0; j < clearProgression.length; j++) {
                 if (j == answerPosition) {
@@ -24,8 +25,8 @@ public class Progression {
                     question += Integer.toString(clearProgression[j]) + " ";
                 }
             }
-            questions[i] = question;
+            roundData[round][indexQuestion] = question;
         }
-        Engine.startGame(progressionMessage, questions, answers);
+        Engine.startGame(progressionMessage, roundData);
     }
 }

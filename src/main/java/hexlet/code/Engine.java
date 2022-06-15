@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class Engine {
 
     public static final int TOTAL_ROUNDS = 3;
-    private static int currentWinRounds = 0;
-
     public static void startGame(String gameMessage, String[][] roundData) {
         int indexQuestion = 0;
         int indexAnswer = 1;
@@ -23,18 +21,15 @@ public class Engine {
             System.out.printf("Your answer: %s\n", gamerAnswer);
             if (gamerAnswer.equals(roundData[round][1])) {
                 System.out.println("Correct!");
-                currentWinRounds++;
             } else {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'\n",
                         gamerAnswer,
                         roundData[round][indexAnswer]);
                 System.out.printf("Let's try again, %s!\n", userName);
-                break;
+                return;
             }
         }
         sc.close();
-        if (TOTAL_ROUNDS == currentWinRounds) {
-            System.out.printf("Congratulations, %s!\n", userName);
-        }
+        System.out.printf("Congratulations, %s!\n", userName);
     }
 }

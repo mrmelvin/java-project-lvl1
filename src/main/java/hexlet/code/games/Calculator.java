@@ -27,12 +27,18 @@ public class Calculator {
                     firstNumbers[round],
                     currentOperators,
                     secondNumbers[round]);
-            if (currentOperators == '+') {
-                roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] + secondNumbers[round]);
-            } else if (currentOperators == '-') {
-                roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] - secondNumbers[round]);
-            } else {
-                roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] * secondNumbers[round]);
+            switch (currentOperators) {
+                case '+':
+                    roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] + secondNumbers[round]);
+                    break;
+                case '-':
+                    roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] - secondNumbers[round]);
+                    break;
+                case '*':
+                    roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] * secondNumbers[round]);
+                    break;
+                default:
+                    System.out.printf("Current operators %s don't support\n", currentOperators);
             }
         }
         Engine.startGame(descriptionGameMessage, roundData);

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    static final int TOTAL_ROUNDS = 3;
+    public static final int TOTAL_ROUNDS = 3;
     private static int currentWinRounds = 0;
 
     public static void startGame(String gameMessage, String[][] roundData) {

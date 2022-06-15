@@ -1,19 +1,28 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import static hexlet.code.MathSupport.generateRandomNumber;
-import static hexlet.code.MathSupport.isNumberPrime;
+import static hexlet.code.Utils.generateRandomNumber;
 
 public class Prime {
-    static final int TOTAL_ROUNDS = 3;
-    static final int MAX_INTEGER = 100;
+
+    private static final int MIN_GENERATOR_NUMBER = 0;
+    private static final int MAX_GENERATOR_NUMBER = 100;
+
+    public static boolean isNumberPrime(int number) {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
     public static void startGame() {
         String primeMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int indexQuestion = 0;
         int indexAnswer = 1;
-        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer + 1];
-        for (int round = 0; round < TOTAL_ROUNDS; round++) {
-            int number = generateRandomNumber(MAX_INTEGER);
+        String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
+        for (int round = 0; round < Engine.TOTAL_ROUNDS; round++) {
+            int number = generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
             roundData[round][indexQuestion] = Integer.toString(number);
             roundData[round][indexAnswer] = isNumberPrime(number) ? "yes" : "no";
         }

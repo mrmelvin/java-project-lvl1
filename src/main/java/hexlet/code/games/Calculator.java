@@ -1,22 +1,27 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import static hexlet.code.MathSupport.generateRandomNumber;
-import static hexlet.code.MathSupport.generateRandomOperators;
+import hexlet.code.Utils;
 
 public class Calculator {
-    static final int TOTAL_ROUNDS = 3;
-    static final int MAX_INTEGER = 100;
+    private static final int MIN_GENERATOR_NUMBER = 0;
+    private static final int MAX_GENERATOR_NUMBER = 50;
+
+    public static char generateRandomOperators() {
+        char[] operations = {'+', '-', '*'};
+        return operations[Utils.generateRandomNumber(0, operations.length - 1)];
+    }
+
     public static void startGame() {
         int indexQuestion = 0;
         int indexAnswer = 1;
-        String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer + 1];
-        int[] firstNumbers = new int[TOTAL_ROUNDS];
-        int[] secondNumbers = new int[TOTAL_ROUNDS];
+        String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
+        int[] firstNumbers = new int[Engine.TOTAL_ROUNDS];
+        int[] secondNumbers = new int[Engine.TOTAL_ROUNDS];
         String calculationMessage = "What is the result of the expression?";
-        for (int round = 0; round < TOTAL_ROUNDS; round++) {
-            firstNumbers[round] = generateRandomNumber(MAX_INTEGER);
-            secondNumbers[round] = generateRandomNumber(MAX_INTEGER);
+        for (int round = 0; round < Engine.TOTAL_ROUNDS; round++) {
+            firstNumbers[round] = Utils.generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
+            secondNumbers[round] = Utils.generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
             char currentOperators = generateRandomOperators();
             roundData[round][indexQuestion] = String.format("%d %c %d",
                     firstNumbers[round],

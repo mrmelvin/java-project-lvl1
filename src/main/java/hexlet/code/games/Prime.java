@@ -16,6 +16,7 @@ public class Prime {
         }
         return true;
     }
+
     public static void startGame() {
         String descriptionGameMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int indexQuestion = 0;

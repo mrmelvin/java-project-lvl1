@@ -10,6 +10,7 @@ public class GCD {
     public static int gcd(int firstPrime, int secondPrime) {
         return secondPrime == 0 ? firstPrime : gcd(secondPrime, firstPrime % secondPrime);
     }
+
     public static void startGame() {
         int indexQuestion = 0;
         int indexAnswer = 1;

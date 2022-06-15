@@ -18,7 +18,7 @@ public class Progression {
         return progression;
     }
     public static void startGame() {
-        String progressionMessage = "What number is missing in the progression?";
+        String descriptionGameMessage = "What number is missing in the progression?";
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
@@ -27,16 +27,17 @@ public class Progression {
             int[] clearProgression = generateProgression(stepProgression);
             int answerPosition = generateRandomNumber(0, clearProgression.length - 1);
             roundData[round][indexAnswer] = Integer.toString(clearProgression[answerPosition]);
-            String question = "";
+            var question = new StringBuilder();
             for (int j = 0; j < clearProgression.length; j++) {
                 if (j == answerPosition) {
-                    question += ".. ";
+                    question.append(".. ");
                 } else {
-                    question += Integer.toString(clearProgression[j]) + " ";
+                    question.append(Integer.toString(clearProgression[j]));
+                    question.append(" ");
                 }
             }
-            roundData[round][indexQuestion] = question;
+            roundData[round][indexQuestion] = question.toString();
         }
-        Engine.startGame(progressionMessage, roundData);
+        Engine.startGame(descriptionGameMessage, roundData);
     }
 }

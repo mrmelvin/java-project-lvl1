@@ -14,13 +14,13 @@ public class GCD {
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
-        String calculationMessage = "Find the greatest common divisor of given numbers.";
+        String descriptionGameMessage = "Find the greatest common divisor of given numbers.";
         for (int round = 0; round < Engine.TOTAL_ROUNDS; round++) {
             int firstInt = generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
             int secondInt = generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
             roundData[round][indexQuestion] = String.format("%d %d", firstInt, secondInt);
             roundData[round][indexAnswer] = Integer.toString(gcd(firstInt, secondInt));
         }
-        Engine.startGame(calculationMessage, roundData);
+        Engine.startGame(descriptionGameMessage, roundData);
     }
 }

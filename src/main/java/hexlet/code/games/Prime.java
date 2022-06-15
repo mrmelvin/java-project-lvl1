@@ -17,7 +17,7 @@ public class Prime {
         return true;
     }
     public static void startGame() {
-        String primeMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String descriptionGameMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
@@ -26,6 +26,6 @@ public class Prime {
             roundData[round][indexQuestion] = Integer.toString(number);
             roundData[round][indexAnswer] = isNumberPrime(number) ? "yes" : "no";
         }
-        Engine.startGame(primeMessage, roundData);
+        Engine.startGame(descriptionGameMessage, roundData);
     }
 }

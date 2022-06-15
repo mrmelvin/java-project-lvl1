@@ -18,7 +18,7 @@ public class Calculator {
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
         int[] firstNumbers = new int[Engine.TOTAL_ROUNDS];
         int[] secondNumbers = new int[Engine.TOTAL_ROUNDS];
-        String calculationMessage = "What is the result of the expression?";
+        String descriptionGameMessage = "What is the result of the expression?";
         for (int round = 0; round < Engine.TOTAL_ROUNDS; round++) {
             firstNumbers[round] = Utils.generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
             secondNumbers[round] = Utils.generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
@@ -35,6 +35,6 @@ public class Calculator {
                 roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] * secondNumbers[round]);
             }
         }
-        Engine.startGame(calculationMessage, roundData);
+        Engine.startGame(descriptionGameMessage, roundData);
     }
 }

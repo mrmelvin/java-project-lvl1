@@ -9,7 +9,7 @@ public class Even {
     private static final int MIN_GENERATOR_NUMBER = 0;
     private static final int MAX_GENERATOR_NUMBER = 100;
     public static void startGame() {
-        String evenMessage = "Answer 'yes' if number even otherwise answer 'no'.";
+        String descriptionGameMessage = "Answer 'yes' if number even otherwise answer 'no'.";
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[TOTAL_ROUNDS][indexAnswer + 1];
@@ -18,6 +18,6 @@ public class Even {
             roundData[round][indexQuestion] = Integer.toString(currentNumber);
             roundData[round][indexAnswer] = (currentNumber % 2 == 0) ? "yes" : "no";
         }
-        Engine.startGame(evenMessage, roundData);
+        Engine.startGame(descriptionGameMessage, roundData);
     }
 }

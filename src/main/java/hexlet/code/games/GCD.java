@@ -12,10 +12,10 @@ public class GCD {
     }
 
     public static void startGame() {
+        final String descriptionGameMessage = "Find the greatest common divisor of given numbers.";
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
-        String descriptionGameMessage = "Find the greatest common divisor of given numbers.";
         for (int round = 0; round < Engine.TOTAL_ROUNDS; round++) {
             int firstInt = generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
             int secondInt = generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);

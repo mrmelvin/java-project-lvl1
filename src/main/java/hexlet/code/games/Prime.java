@@ -18,7 +18,7 @@ public class Prime {
     }
 
     public static void startGame() {
-        String descriptionGameMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        final String descriptionGameMessage = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];

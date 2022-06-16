@@ -10,11 +10,10 @@ public class Progression {
     private static final int MAX_GENERATOR_NUMBER = 50;
     private static final int LENGTH_PROGRESSION = 10;
 
-    public static int[] generateProgression(int stepProgression, int lengthProgression) {
-        int[] progression = new int[lengthProgression];
-        progression[0] = generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
-        for (int i = 1; i < lengthProgression; i++) {
-            progression[i] = progression[i - 1] + stepProgression;
+    public static int[] generateProgression(int firstElement, int step, int length) {
+        int[] progression = new int[length];
+        for (int i = 0; i < length; i++) {
+            progression[i] = firstElement + step * i;
         }
         return progression;
     }
@@ -26,7 +25,8 @@ public class Progression {
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
         for (int round = 0; round < Engine.TOTAL_ROUNDS; round++) {
             int stepProgression = generateRandomNumber(MIN_STEP_NUMBER, MAX_STEP_NUMBER);
-            int[] clearProgression = generateProgression(stepProgression, LENGTH_PROGRESSION);
+            int firstElementProgression = generateRandomNumber(MIN_GENERATOR_NUMBER, MAX_GENERATOR_NUMBER);
+            int[] clearProgression = generateProgression(firstElementProgression, stepProgression, LENGTH_PROGRESSION);
             int answerPosition = generateRandomNumber(0, clearProgression.length - 1);
             roundData[round][indexAnswer] = Integer.toString(clearProgression[answerPosition]);
             var question = new StringBuilder();

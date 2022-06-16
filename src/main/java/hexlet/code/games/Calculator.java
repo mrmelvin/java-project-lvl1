@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calculator {
-    private static final int MIN_GENERATOR_NUMBER = 0;
+    private static final int MIN_GENERATOR_NUMBER = 1;
     private static final int MAX_GENERATOR_NUMBER = 50;
 
     public static char generateRandomOperators() {

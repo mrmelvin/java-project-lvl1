@@ -13,22 +13,22 @@ public class Calculator {
         return OPERATIONS[Utils.generateRandomNumber(0, OPERATIONS.length - 1)];
     }
 
-    public static String calculate(char operator, int firstIntNumber, int secondIntNumber) {
-        var expression = new StringBuilder();
+    public static int calculate(char operator, int firstIntNumber, int secondIntNumber) {
+        int answer = 0;
         switch (operator) {
             case '+':
-                expression.append(Integer.toString(firstIntNumber + secondIntNumber));
+                answer = firstIntNumber + secondIntNumber;
                 break;
             case '-':
-                expression.append(Integer.toString(firstIntNumber - secondIntNumber));
+                answer = firstIntNumber - secondIntNumber;
                 break;
             case '*':
-                expression.append(Integer.toString(firstIntNumber * secondIntNumber));
+                answer = firstIntNumber * secondIntNumber;
                 break;
             default:
                 System.out.printf("Current operators %s don't support\n", operator);
         }
-        return expression.toString();
+        return answer;
     }
 
     public static void startGame() {
@@ -45,7 +45,7 @@ public class Calculator {
                     firstNumbers[round],
                     currentOperators,
                     secondNumbers[round]);
-            roundData[round][indexAnswer] = calculate(currentOperators, firstNumbers[round], secondNumbers[round]);
+            roundData[round][indexAnswer] = Integer.toString(calculate(currentOperators, firstNumbers[round], secondNumbers[round]));
         }
         Engine.startGame(DESCRIPTION_GAME_MESSAGE, roundData);
     }

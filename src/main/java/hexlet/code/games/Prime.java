@@ -5,7 +5,7 @@ import static hexlet.code.Utils.generateRandomNumber;
 
 public class Prime {
 
-    private static final int MIN_GENERATOR_NUMBER = 0;
+    private static final int MIN_GENERATOR_NUMBER = 2;
     private static final int MAX_GENERATOR_NUMBER = 100;
     private static final String DESCRIPTION_GAME_MESSAGE =
             "Answer 'yes' if given number is prime. Otherwise answer 'no'.";

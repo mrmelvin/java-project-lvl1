@@ -6,14 +6,32 @@ import hexlet.code.Utils;
 public class Calculator {
     private static final int MIN_GENERATOR_NUMBER = 1;
     private static final int MAX_GENERATOR_NUMBER = 50;
+    private static final String DESCRIPTION_GAME_MESSAGE = "What is the result of the expression?";
+    private static final char[] OPERATIONS = {'+', '-', '*'};
 
     public static char generateRandomOperators() {
-        char[] operations = {'+', '-', '*'};
-        return operations[Utils.generateRandomNumber(0, operations.length - 1)];
+        return OPERATIONS[Utils.generateRandomNumber(0, OPERATIONS.length - 1)];
+    }
+
+    public static String calculate(char operator, int firstIntNumber, int secondIntNumber) {
+        var expression = new StringBuilder();
+        switch (operator) {
+            case '+':
+                expression.append(Integer.toString(firstIntNumber + secondIntNumber));
+                break;
+            case '-':
+                expression.append(Integer.toString(firstIntNumber - secondIntNumber));
+                break;
+            case '*':
+                expression.append(Integer.toString(firstIntNumber * secondIntNumber));
+                break;
+            default:
+                System.out.printf("Current operators %s don't support\n", operator);
+        }
+        return expression.toString();
     }
 
     public static void startGame() {
-        final String descriptionGameMessage = "What is the result of the expression?";
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
@@ -27,20 +45,8 @@ public class Calculator {
                     firstNumbers[round],
                     currentOperators,
                     secondNumbers[round]);
-            switch (currentOperators) {
-                case '+':
-                    roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] + secondNumbers[round]);
-                    break;
-                case '-':
-                    roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] - secondNumbers[round]);
-                    break;
-                case '*':
-                    roundData[round][indexAnswer] = Integer.toString(firstNumbers[round] * secondNumbers[round]);
-                    break;
-                default:
-                    System.out.printf("Current operators %s don't support\n", currentOperators);
-            }
+            roundData[round][indexAnswer] = calculate(currentOperators, firstNumbers[round], secondNumbers[round]);
         }
-        Engine.startGame(descriptionGameMessage, roundData);
+        Engine.startGame(DESCRIPTION_GAME_MESSAGE, roundData);
     }
 }

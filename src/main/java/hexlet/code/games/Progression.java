@@ -9,6 +9,7 @@ public class Progression {
     private static final int MIN_GENERATOR_NUMBER = 1;
     private static final int MAX_GENERATOR_NUMBER = 50;
     private static final int LENGTH_PROGRESSION = 10;
+    private static final String DESCRIPTION_GAME_MESSAGE = "What number is missing in the progression?";
 
     public static int[] generateProgression(int firstElement, int step, int length) {
         int[] progression = new int[length];
@@ -19,7 +20,6 @@ public class Progression {
     }
 
     public static void startGame() {
-        final String descriptionGameMessage = "What number is missing in the progression?";
         int indexQuestion = 0;
         int indexAnswer = 1;
         String[][] roundData = new String[Engine.TOTAL_ROUNDS][indexAnswer + 1];
@@ -40,6 +40,6 @@ public class Progression {
             }
             roundData[round][indexQuestion] = question.toString();
         }
-        Engine.startGame(descriptionGameMessage, roundData);
+        Engine.startGame(DESCRIPTION_GAME_MESSAGE, roundData);
     }
 }

@@ -45,7 +45,8 @@ public class Calculator {
                     firstNumbers[round],
                     currentOperators,
                     secondNumbers[round]);
-            roundData[round][indexAnswer] = Integer.toString(calculate(currentOperators, firstNumbers[round], secondNumbers[round]));
+            roundData[round][indexAnswer] =
+                    Integer.toString(calculate(currentOperators, firstNumbers[round], secondNumbers[round]));
         }
         Engine.startGame(DESCRIPTION_GAME_MESSAGE, roundData);
     }

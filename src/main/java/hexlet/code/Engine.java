@@ -8,12 +8,11 @@ public class Engine {
     public static void startGame(String gameMessage, String[][] roundData) {
         int indexQuestion = 0;
         int indexAnswer = 1;
-        Scanner scanName = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to the Brain Games!\nMay I have your name?");
-        String userName = scanName.nextLine();
+        String userName = sc.nextLine();
         System.out.printf("Hello, %s!\n", userName);
         System.out.println(gameMessage);
-        Scanner sc = new Scanner(System.in);
         for (int round = 0; round < TOTAL_ROUNDS; round++) {
             String s = String.format("Question: %s", roundData[round][indexQuestion]);
             System.out.println(s);

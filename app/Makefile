@@ -19,7 +19,7 @@ test:
 	./gradlew test
 
 report:
-	make -C app report
+	./gradlew jacocoTestReport
 
 lint:
 	./gradlew checkstyleMain checkstyleTest

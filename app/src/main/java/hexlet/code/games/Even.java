@@ -7,7 +7,7 @@ import static hexlet.code.Utils.generateRandomNumber;
 public class Even {
     private static final int MIN_GENERATOR_NUMBER = 1;
     private static final int MAX_GENERATOR_NUMBER = 100;
-    private static final String DESCRIPTION_GAME_MESSAGE = "Answer 'yes' if number even otherwise answer 'no'.";
+    private static final String DESCRIPTION_GAME_MESSAGE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static boolean isEven(int number) {
         return number % 2 == 0 ? true : false;

@@ -18,6 +18,9 @@ run:
 test:
 	./gradlew test
 
+report:
+	make -C app report
+
 lint:
 	./gradlew checkstyleMain checkstyleTest
 
